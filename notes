@@ -1,0 +1,23 @@
+dogs[dogs]("color") == "Black"
+/  dogs.groupby("color")["weight_kg"].mean()
+/ dogs.groupby("color")["weight_kg").agg([min,max,sum])
+/ dogs.groupby(["color", "breed])["weight_kg"].mean() /
+
+dogs.pivot_table(values="weight_kg", index="color", columns="breed")
+dogs.pivot_table(values="weight_kg", index="color", columns="breed", fill_value=0, margins=True)
+
+Chapter 3
+
+Move a column from body of dataframe to index
+
+dogs_ind= dogs.set_index("name")
+Print(dogs_ind)
+
+dogs.ind.reset_index to undo this
+
+(drop=True) argument can reset this to true
+
+locating values
+
+dogs_ind.loc[["Bella","Stella"]]
+
